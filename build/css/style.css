@@ -386,8 +386,10 @@ a {
   display: -ms-flexbox;
   display: flex;
   padding: 1em 1.5em; }
+  .top-menu a {
+    color: inherit; }
 
-.separator {
+.top-menu-separator {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
