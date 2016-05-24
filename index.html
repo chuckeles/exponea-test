@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="exponeaApp">
 
   <head>
 
     <!-- META -->
-    <title>Exponea</title>
+    <title>{{ title }}</title>
     <meta charset="utf-8">
     <base href="/">
 
@@ -16,10 +16,21 @@
 
   </head>
 
-  <body ng-app="exponeaApp">
+  <body>
 
     <!-- APP -->
-    <top-menu></top-menu>
+    <header class="top-menu">
+      <side-menu></side-menu>
+      <breadcrumbs active="title"></breadcrumbs>
+
+      <div class="top-menu-separator"></div>
+
+      <a href="#" class="top-menu-link">Live support</a>
+      <a href="#" class="top-menu-link">User guides</a>
+
+      <notifications></notifications>
+      <user-menu></user-menu>
+    </header>
     <main class="page" ng-view></main>
 
   </body>

@@ -4,7 +4,9 @@ angular.module("exponeaApp")
     return {
       restrict: "E",
       templateUrl: "directives/breadcrumbs.html",
-      scope: {},
+      scope: {
+        active: "="
+      },
       link: function breadcrumbsLink(scope) {
         // This could be retrieved from the router.
         scope.path = [
