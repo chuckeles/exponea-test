@@ -31900,6 +31900,15 @@ angular.module("exponeaApp", ["ngRoute"]);
 
 angular.module("exponeaApp")
 
+  .directive("breadcrumbs", function breadcrumbs() {
+    return {
+      restrict: "E",
+      templateUrl: "directives/breadcrumbs.html"
+    };
+  });
+
+angular.module("exponeaApp")
+
   .directive("notifications", function notifications() {
     return {
       restrict: "E",
