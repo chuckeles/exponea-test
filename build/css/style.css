@@ -379,6 +379,12 @@ a {
   color: #8d4ffb;
   text-decoration: none; }
 
+.notifications-icon {
+  margin: .5em; }
+
+.side-menu-icon {
+  margin-right: .5em; }
+
 .top-menu {
   background-color: white;
   border-bottom: 2px solid #f4f4f4;

@@ -46,6 +46,11 @@ var output = {
 gulp.task("default", ["watch", "serve"]);
 
 /**
+ * The build task builds everything.
+ */
+gulp.task("build", ["html", "css", "js"]);
+
+/**
  * Watch task. Watches files for changes and reloads and recompiles.
  */
 gulp.task("watch", function watch() {
