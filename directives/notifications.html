@@ -1,3 +1,4 @@
-<a href="#" class="notifications-icon">
-  <i class="fa fa-bell-o"></i>
+<a href="#" class="notifications-icon" ng-class="{ 'notifications-unread': unread }">
+  <i class="fa fa-bell-o" ng-hide="unread"></i>
+  <i class="fa fa-bell" ng-show="unread" ng-click="unread = false"></i>
 </a>

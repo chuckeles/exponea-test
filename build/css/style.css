@@ -390,7 +390,11 @@ a {
   color: #47474f; }
 
 .notifications-icon {
-  margin: .5em; }
+  color: #adb1ba;
+  margin: 0.6em; }
+
+.notifications-unread {
+  color: #db1b5c; }
 
 .side-menu-icon {
   color: #adb1ba;
@@ -408,3 +412,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
+
+.top-menu-link {
+  color: #adb1ba;
+  padding: 0 0.6em; }
