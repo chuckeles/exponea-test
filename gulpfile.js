@@ -69,7 +69,9 @@ gulp.task("serve", function serve() {
 /**
  * Reload the browser when the HTML changes.
  */
-gulp.task("html", browserSync.reload);
+gulp.task("html", function html() {
+  browserSync.reload();
+});
 
 /**
  * Concatenate CSS. Also inject into the browser.
@@ -86,7 +88,9 @@ gulp.task("css", function css() {
 /**
  * Run the JS task and reload the browser.
  */
-gulp.task("js-reload", ["js"], browserSync.reload);
+gulp.task("js-reload", ["js"], function jsReload() {
+  browserSync.reload();
+});
 
 /**
  * Concatenate JS.
