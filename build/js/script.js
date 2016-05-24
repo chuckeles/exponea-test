@@ -31936,6 +31936,28 @@ angular.module("exponeaApp")
 angular.module("exponeaApp")
 
   /**
+   * Shows a random number. Very useful metric.
+   */
+  .directive("randomMetric", function randomMetric($interval) {
+    return {
+      restrict: "E",
+      templateUrl: "directives/random-metric.html",
+      scope: {},
+      replace: true,
+      link: function randomMetricLink(scope) {
+        scope.setRandomValue = function setRandomValue() {
+          scope.value = Math.floor(Math.random() * 100000);
+        };
+        scope.setRandomValue();
+
+        $interval(scope.setRandomValue, 3000);
+      }
+    };
+  });
+
+angular.module("exponeaApp")
+
+  /**
    * Configure the router.
    */
   .config(function routeConfig($routeProvider, $locationProvider) {
@@ -31957,6 +31979,14 @@ angular.module("exponeaApp")
     return {
       restrict: "E",
       templateUrl: "directives/side-menu.html"
+    };
+  });
+
+angular.module("exponeaApp")
+
+  .filter("spaceyNumber", function spaceyNumber(numberFilter) {
+    return function spaceyNumberFilter(input) {
+      return numberFilter(input).replace(",", " ");
     };
   });
 
