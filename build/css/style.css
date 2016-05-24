@@ -396,6 +396,9 @@ a {
 .notifications-unread {
   color: #db1b5c; }
 
+.page {
+  padding: 2.5em; }
+
 .side-menu-icon {
   color: #adb1ba;
   margin-right: 2.5em; }
@@ -418,4 +421,5 @@ a {
   padding: 0 0.6em; }
 
 .user-menu-icon {
+  color: #47474f;
   margin-left: 0.6em; }
