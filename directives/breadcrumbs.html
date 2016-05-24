@@ -1,5 +1,5 @@
 <div class="breadcrumbs">
-  Dashboards
-  <span class="breadcrumbs-separator">/</span>
-  <span class="breadcrumbs-active">User Activity</span>
+  <span ng-repeat-start="part in path">{{ part }}</span>
+  <span class="breadcrumbs-separator" ng-repeat-end>/</span>
+  <span class="breadcrumbs-active">{{ active }}</span>
 </div>
