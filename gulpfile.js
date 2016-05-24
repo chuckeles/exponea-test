@@ -23,7 +23,7 @@ var input = {
   ],
   css: [
     "bower_components/normalize-css/normalize.css",
-    "css/**/*.css"
+    "sass/**/*.sass"
   ],
   js: [
     "bower_components/angular/angular.js",
@@ -60,10 +60,10 @@ gulp.task("watch", function watch() {
 gulp.task("serve", function serve() {
   browserSync.init({
     server: {
-      baseDir: "./",
-      open: false,
-      notify: false
-    }
+      baseDir: "./"
+    },
+    open: false,
+    notify: false
   });
 });
 
