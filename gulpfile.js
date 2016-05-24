@@ -7,8 +7,9 @@ var gulp        = require("gulp");
 /**
  * Gulp plugins.
  */
-var concat  = require("gulp-concat");
-var plumber = require("gulp-plumber");
+var autoprefixer = require("gulp-autoprefixer");
+var concat       = require("gulp-concat");
+var plumber      = require("gulp-plumber");
 
 /**
  * Input files. HTML, CSS, JS.
@@ -76,6 +77,7 @@ gulp.task("html", browserSync.reload);
 gulp.task("css", function css() {
   return gulp.src(input.css)
     .pipe(plumber())
+    .pipe(autoprefixer())
     .pipe(concat("style.css"))
     .pipe(gulp.dest(output.css))
     .pipe(browserSync.stream());
