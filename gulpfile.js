@@ -10,6 +10,7 @@ var gulp        = require("gulp");
 var autoprefixer = require("gulp-autoprefixer");
 var concat       = require("gulp-concat");
 var plumber      = require("gulp-plumber");
+var sass         = require("gulp-sass");
 
 /**
  * Input files. HTML, CSS, JS.
@@ -79,6 +80,7 @@ gulp.task("html", function html() {
 gulp.task("css", function css() {
   return gulp.src(input.css)
     .pipe(plumber())
+    .pipe(sass())
     .pipe(autoprefixer())
     .pipe(concat("style.css"))
     .pipe(gulp.dest(output.css))

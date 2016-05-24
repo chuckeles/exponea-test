@@ -1,13 +1,16 @@
 {
   "name": "exponea",
+  "author": "Martin",
   "version": "0.1.0",
   "description": "Job interview task",
-  "author": "Martin",
+  "private": true,
+  "license": "MIT",
   "dependencies": {
     "browser-sync": "^2.12.8",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
-    "gulp-plumber": "^1.1.0"
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1"
   }
 }
