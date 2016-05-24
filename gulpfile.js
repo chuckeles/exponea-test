@@ -15,7 +15,9 @@ var plumber = require("gulp-plumber");
  */
 var input = {
   html: [
-    "index.html"
+    "index.html",
+    "partials/**/*.html",
+    "directives/**/*.html"
   ],
   css: [
     "bower_components/normalize-css/normalize.css",
@@ -66,9 +68,7 @@ gulp.task("serve", function serve() {
 /**
  * Reload the browser when the HTML changes.
  */
-gulp.task("html", function html() {
-  browserSync.reload();
-});
+gulp.task("html", browserSync.reload);
 
 /**
  * Concatenate CSS. Also inject into the browser.
