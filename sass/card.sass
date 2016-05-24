@@ -1,0 +1,17 @@
+@import colors
+@import variables
+
+.card-row
+  display: flex
+
+.card
+  background-color: $background-light
+  flex:             1
+  margin:           $padding
+  padding:          $padding-tiny $padding-small
+
+  & + &
+    margin-left: 0
+
+.card-header
+  text-transform: uppercase

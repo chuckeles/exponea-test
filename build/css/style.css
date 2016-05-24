@@ -389,15 +389,30 @@ a {
 .breadcrumbs-active {
   color: #47474f; }
 
+.card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.card {
+  background-color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 2.5em;
+  padding: 0.6em 1.4em; }
+  .card + .card {
+    margin-left: 0; }
+
+.card-header {
+  text-transform: uppercase; }
+
 .notifications-icon {
   color: #adb1ba;
   margin: 0.6em; }
 
 .notifications-unread {
   color: #db1b5c; }
-
-.page {
-  padding: 2.5em; }
 
 .side-menu-icon {
   color: #adb1ba;
@@ -419,6 +434,9 @@ a {
 .top-menu-link {
   color: #adb1ba;
   padding: 0 0.6em; }
+
+.user-menu {
+  margin-left: 0.6em; }
 
 .user-menu-icon {
   color: #47474f;
