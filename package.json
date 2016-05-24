@@ -1,0 +1,10 @@
+{
+  "name": "exponea",
+  "version": "0.1.0",
+  "description": "Job interview task",
+  "author": "Martin",
+  "dependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1"
+  }
+}
