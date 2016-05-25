@@ -384,7 +384,7 @@ a {
   color: #adb1ba; }
 
 .breadcrumbs-separator {
-  margin: 0 0.6em; }
+  margin: 0 0.8rem; }
 
 .breadcrumbs-active {
   color: #47474f; }
@@ -399,8 +399,8 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin: 2.5em;
-  padding: 1.4em; }
+  margin: 2.5rem;
+  padding: 1.4rem; }
   .card + .card {
     margin-left: 0; }
 
@@ -410,19 +410,42 @@ a {
   margin-top: 0;
   text-transform: uppercase; }
 
+.goal {
+  border-top: 2px solid #f4f4f4;
+  font-size: .8em;
+  margin: -1.4rem;
+  margin-top: 1.4rem;
+  padding: 0.8rem 1.4rem; }
+
+.goal-title {
+  margin: 0;
+  text-transform: uppercase; }
+  .goal-title + .goal-graph {
+    margin-left: 1.4rem; }
+
+.goal-graph {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 .metric-value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   font-size: 3em; }
+  .metric-value + .metric-graph {
+    margin-left: 2.5rem; }
 
 .notifications-icon {
   color: #adb1ba;
-  margin: 0.6em; }
+  margin: 0.8rem; }
 
 .notifications-unread {
   color: #db1b5c; }
 
 .side-menu-icon {
   color: #adb1ba;
-  margin-right: 2.5em; }
+  margin-right: 2.5rem; }
 
 .top-menu {
   background-color: white;
@@ -430,7 +453,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1.4em 2.5em; }
+  padding: 1.4rem 2.5rem; }
 
 .top-menu-separator {
   -webkit-box-flex: 1;
@@ -439,11 +462,11 @@ a {
 
 .top-menu-link {
   color: #adb1ba;
-  padding: 0 0.6em; }
+  padding: 0 0.8rem; }
 
 .user-menu {
-  margin-left: 0.6em; }
+  margin-left: 0.8rem; }
 
 .user-menu-icon {
   color: #47474f;
-  margin-left: 0.6em; }
+  margin-left: 0.8rem; }

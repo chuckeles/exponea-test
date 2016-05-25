@@ -1,0 +1,19 @@
+@import colors
+@import variables
+
+.goal
+  border-top: 2px solid $border
+  font-size: .8em
+  margin:     -$padding-small
+  margin-top: $padding-small
+  padding:    $padding-tiny $padding-small
+
+.goal-title
+  margin:         0
+  text-transform: uppercase
+
+  & + .goal-graph
+    margin-left: $padding-small
+
+.goal-graph
+  flex: 1

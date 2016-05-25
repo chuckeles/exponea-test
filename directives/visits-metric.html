@@ -1,0 +1,11 @@
+<div class="card metric">
+  <h3 class="card-header">{{ title }} Visits</h3>
+  <div class="card-row">
+    <div class="metric-value">{{ value | number }}</div>
+    <div class="metric-graph">graph</div>
+  </div>
+  <div class="card-row goal" ng-show="goal">
+    <h4 class="goal-title">Goal</h4>
+    <div class="goal-graph">graph</div>
+  </div>
+</div>
