@@ -6,7 +6,7 @@ exports.config = {
   },
   baseUrl: "http://localhost:3000",
   specs: [
-    "test/protractor/**/*.js"
+    "protractor/**/*.js"
   ]
 
 };
