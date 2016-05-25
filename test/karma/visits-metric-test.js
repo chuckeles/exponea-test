@@ -13,6 +13,10 @@ describe("visits-metric", function() {
     expect(this.element.text()).toMatch(/[+-][\s\n]+[.0-9]+%/);
   });
 
+  it("contains a chart", function() {
+    expect(this.element.find("chartist").html()).toBeDefined();
+  });
+
   describe("with a goal", function() {
 
     it("shows a progress bar", function() {
