@@ -13,7 +13,7 @@ describe("userMenu", function() {
   });
 
   it("has my name", function() {
-    expect(this.element.text()).toMatch(/Martin/);
+    expect(this.element.text()).toMatch("Martin");
   });
 
   beforeEach(module("exponeaApp"));
