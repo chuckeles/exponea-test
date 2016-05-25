@@ -1,9 +1,11 @@
 /**
  * Dependencies.
  */
+var argv        = require("yargs").argv;
 var browserSync = require("browser-sync").create();
 var gulp        = require("gulp");
 var karma       = require("karma");
+var spawn       = require("child_process").spawn;
 
 /**
  * Gulp plugins.
@@ -33,7 +35,8 @@ var input = {
     "bower_components/chartist/dist/chartist.js",
     "js/**/*.js"
   ],
-  karma: __dirname + "/test/karma.js"
+  karma:      __dirname + "/test/karma.js",
+  protractor: "test/protractor.js"
 };
 
 /**
@@ -133,6 +136,32 @@ gulp.task("karma", function karmaTask(done) {
 /**
  * Run the protractor tests (feature or end-to-end tests).
  */
-gulp.task("protractor", function protractorTask() {
+gulp.task("protractor", function protractorTask(done) {
+  gulp.start("serve");
 
+  spawn("node_modules/protractor/bin/webdriver-manager", ["update"])
+    .on("close", function webdriverManagerUpdated() {
+      // This is for my own computer. The webdriver-manager has to be run
+      // by xvfb-run. This is a mess...
+      var first = "node_modules/protractor/bin/webdriver-manager";
+      var second = "start";
+      var third = "";
+      if (argv.x || argv.xvfb || argv.xvfbRun) {
+        third = second;
+        second = first;
+        first = "xvfb-run";
+      }
+
+      spawn(first, [second, third]);
+
+      spawn("node_modules/protractor/bin/protractor", [input.protractor], {
+        stdio: "inherit"
+      })
+        .on("close", function protractorRun() {
+          done();
+
+          // Close browser-sync and webdriver-manager.
+          process.exit();
+        });
+    });
 });
