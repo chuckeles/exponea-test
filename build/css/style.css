@@ -396,6 +396,13 @@ a {
 
 .card {
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -409,6 +416,11 @@ a {
   margin-bottom: 2em;
   margin-top: 0;
   text-transform: uppercase; }
+
+.card-main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
 
 .goal {
   border-top: 2px solid #f4f4f4;

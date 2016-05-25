@@ -31900,6 +31900,9 @@ angular.module("exponeaApp", ["ngRoute"]);
 
 angular.module("exponeaApp")
 
+  /**
+   * Shows the path to the current URL separated by "/" - breadcrumbs.
+   */
   .directive("breadcrumbs", function breadcrumbs() {
     return {
       restrict: "E",
@@ -31919,6 +31922,30 @@ angular.module("exponeaApp")
 
 angular.module("exponeaApp")
 
+  /**
+   * Shows a metric specified by the inputs.
+   */
+  .directive("metric", function metric() {
+    return {
+      restrict: "E",
+      templateUrl: "directives/metric.html",
+      scope: {
+        title: "@",
+        goal: "@"
+      },
+      replace: true,
+      link: function metricLink(scope) {
+        scope.value = Math.floor(Math.random() * (scope.goal || 5000));
+      }
+    };
+  });
+
+angular.module("exponeaApp")
+
+  /**
+   * User's notifications. It has a bell icon. When the user
+   * has any notifications, the bell is red.
+   */
   .directive("notifications", function notifications() {
     return {
       restrict: "E",
@@ -31929,28 +31956,6 @@ angular.module("exponeaApp")
           "OMG this is fun!"
         ];
         scope.unread = true;
-      }
-    };
-  });
-
-angular.module("exponeaApp")
-
-  /**
-   * Shows a random number. Very useful metric.
-   */
-  .directive("randomMetric", function randomMetric($interval) {
-    return {
-      restrict: "E",
-      templateUrl: "directives/random-metric.html",
-      scope: {},
-      replace: true,
-      link: function randomMetricLink(scope) {
-        scope.setRandomValue = function setRandomValue() {
-          scope.value = Math.floor(Math.random() * 100000);
-        };
-        scope.setRandomValue();
-
-        $interval(scope.setRandomValue, 3000);
       }
     };
   });
@@ -31984,6 +31989,10 @@ angular.module("exponeaApp")
 
 angular.module("exponeaApp")
 
+  /**
+   * Filter to format a number. Uses spacing instead of
+   * commas to separate the thousands.
+   */
   .filter("spaceyNumber", function spaceyNumber(numberFilter) {
     return function spaceyNumberFilter(input) {
       return numberFilter(input).replace(",", " ");
@@ -31992,6 +32001,9 @@ angular.module("exponeaApp")
 
 angular.module("exponeaApp")
 
+  /**
+   * Main user menu. It could contain links to settings, profile, logout, etc.
+   */
   .directive("userMenu", function userMenu() {
     return {
       restrict: "E",

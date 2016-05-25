@@ -1,0 +1,8 @@
+<div class="card">
+  <h3 class="card-header">{{ title }}</h3>
+  <div class="card-main metric-value">{{ value | spaceyNumber }}</div>
+  <div class="card-row goal" ng-show="goal">
+    <h4 class="goal-title">Goal</h4>
+    <div class="goal-graph">{{ value }} / {{ goal }}</div>
+  </div>
+</div>
