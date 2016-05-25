@@ -35,7 +35,14 @@
       <a href="#" class="back-button">
         <i class="fa fa-arrow-left"></i>
       </a>
+      <button class="button">{{ title }} <i class="button-icon fa fa-caret-down"></i></button>
+      <button class="button button-disabled">Filters (0)</button>
       <div class="top-menu-separator"></div>
+      <div class="button-group">
+        <button class="button button-primary">Refresh</button>
+        <button class="button button-primary"><i class="fa fa-angle-right"></i></button>
+      </div>
+      <button class="button">Edit</button><button class="button"><i class="fa fa-ellipsis-h"></i></button>
     </section>
     <main ng-view></main>
 
