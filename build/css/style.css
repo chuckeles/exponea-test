@@ -364,6 +364,10 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+.back-button {
+  color: #adb1ba;
+  margin-right: 2.5rem; }
+
 html {
   font-family: Roboto, Verdana, sans-serif;
   font-size: 18px;
