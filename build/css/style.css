@@ -1194,13 +1194,11 @@ a {
 .metric-change-negative {
   color: #db1b5c; }
 
-.metric-graph {
-  padding-bottom: 2.2rem; }
-  .metric-graph .ct-bar {
-    stroke-width: 20px; }
-    @media (min-width: 1200px) {
-      .metric-graph .ct-bar {
-        stroke-width: 5px; } }
+.metric-graph .ct-bar {
+  stroke-width: 20px; }
+  @media (min-width: 1200px) {
+    .metric-graph .ct-bar {
+      stroke-width: 5px; } }
 
 .metric-graph-positive .ct-bar {
   stroke: #39a847; }

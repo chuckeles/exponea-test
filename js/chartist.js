@@ -8,7 +8,7 @@ angular.module("exponeaApp")
         data: "="
       },
       link: function chartistLink(scope, element) {
-        element.addClass("ct-chart ct-square");
+        element.addClass("ct-chart ct-perfect-fourth");
         var type = scope.type.charAt(0).toUpperCase() + scope.type.slice(1);
 
         scope.$watch("data", function() {
@@ -23,7 +23,12 @@ angular.module("exponeaApp")
               showLabel: false,
               offset: 0
             },
-            chartPadding: 0
+            chartPadding: {
+              top: 0,
+              right: 0,
+              bottom: 10,
+              left: 0
+            }
           });
         });
       }
