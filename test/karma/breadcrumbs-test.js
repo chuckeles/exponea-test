@@ -9,10 +9,8 @@ describe("breadcrumbs", function() {
   });
 
   it("contains the active path", function() {
-    expect(this.element.html()).toMatch(active);
+    expect(this.element.html()).toMatch(this.active);
   });
-
-  var active = "Active";
 
   beforeEach(module("exponeaApp"));
   beforeEach(module("directives/breadcrumbs.html"));
@@ -20,7 +18,7 @@ describe("breadcrumbs", function() {
   beforeEach(inject(function($compile, $rootScope) {
     this.element = $compile("<breadcrumbs active='active'></breadcrumbs>")($rootScope);
     $rootScope.$digest();
-    active = $rootScope.active;
+    this.active = $rootScope.active;
   }));
 
 });
