@@ -21,5 +21,5 @@ npm install
 bower install
 ```
 
-Gulp is the manager here. Just run `gulp` to run the server and visit `localhost:3000`.
+Gulp is the manager here. Just run `gulp serve` to run the server and visit `localhost:3000`.
 See the `gulpfile.js` for all Gulp tasks and their explanations.
