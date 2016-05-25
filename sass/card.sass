@@ -2,7 +2,11 @@
 @import variables
 
 .card-row
-  display: flex
+  display:        flex
+  flex-direction: column
+
+  @media (min-width: $breakpoint-medium)
+    flex-direction: row
 
 .card
   background-color: $background-light
@@ -13,7 +17,12 @@
   padding:          $padding-small
 
   & + &
-    margin-left: 0
+    margin-top: 0
+
+  @media (min-width: $breakpoint-medium)
+    & + &
+      margin-left: 0
+      margin-top:  $padding
 
 .card-header
   font-size:      inherit

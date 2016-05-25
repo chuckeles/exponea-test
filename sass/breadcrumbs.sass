@@ -2,7 +2,11 @@
 @import variables
 
 .breadcrumbs
-  color: $text-light
+  color:  $text-light
+  display: none
+
+  @media (min-width: $breakpoint-small)
+    display: block
 
 .breadcrumbs-separator
   margin: 0 $padding-tiny
