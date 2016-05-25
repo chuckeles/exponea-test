@@ -8,12 +8,17 @@ describe("visits-metric", function() {
     expect(this.element.html()).toMatch(this.title);
   });
 
+  it("shows the last 7 days change", function() {
+    expect(this.element.text()).toMatch("last 7 days");
+    expect(this.element.text()).toMatch(/[+-][\s\n]+[.0-9]+%/);
+  });
+
   describe("with a goal", function() {
 
     it("shows a progress bar", function() {
-      expect(this.element.html()).toMatch("Goal");
+      expect(this.element.text()).toMatch("Goal");
       expect(this.element.find("progress").html()).toBeDefined();
-      expect(this.element.html()).toMatch(/[0-9]+%/);
+      expect(this.element.text()).toMatch(/[0-9]+%/);
     });
 
     beforeEach(function() {
@@ -21,7 +26,7 @@ describe("visits-metric", function() {
     });
 
     beforeEach(inject(function($compile, $rootScope) {
-      this.element = $compile("<metric title='" + this.title + "' goal='" + this.goal + "'></metric>")($rootScope);
+      this.element = $compile("<visits-metric title='" + this.title + "' goal='" + this.goal + "'></visits-metric>")($rootScope);
       $rootScope.$digest();
     }));
 
