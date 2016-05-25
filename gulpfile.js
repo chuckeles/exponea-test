@@ -140,31 +140,34 @@ gulp.task("karma", function karmaTask(done) {
 gulp.task("protractor", function protractorTask(done) {
   gulp.start("serve");
 
-  spawn("node_modules/protractor/bin/webdriver-manager", ["update"])
-    .on("close", function webdriverManagerUpdated() {
+  spawn("node_modules/protractor/bin/webdriver-manager", ["update"], {
+    stdio: "inherit"
+  }).on("close", function webdriverManagerUpdated() {
       // This is for my own computer. The webdriver-manager has to be run
       // by xvfb-run. This is a mess...
-      var first = "node_modules/protractor/bin/webdriver-manager";
-      var second = "start";
-      var third = "";
+      var childProcess = "node_modules/protractor/bin/webdriver-manager";
+      var args = ["start"];
       if (argv.x || argv.xvfb || argv.xvfbRun) {
-        third = second;
-        second = first;
-        first = "xvfb-run";
+        args.unshift(childProcess);
+        childProcess = "xvfb-run";
       }
 
-      spawn(first, [second, third]);
-
-      spawn("node_modules/protractor/bin/protractor", [input.protractor], {
+      spawn(childProcess, args, {
         stdio: "inherit"
-      })
-        .on("close", function protractorRun(code) {
-          done(code);
+      });
 
-          // Close browser-sync and webdriver-manager.
-          // Unfortunatelly this also exits the karma task
-          // when run as `gulp test`.
-          process.exit();
-        });
+      console.log("Running protractor in 5 seconds...");
+      setTimeout(function delayedProtractor() {
+        spawn("node_modules/protractor/bin/protractor", [input.protractor], {
+          stdio: "inherit"
+        }).on("close", function protractorRun(code) {
+            done(code);
+
+            // Close browser-sync and webdriver-manager.
+            // Unfortunatelly this also exits the karma task
+            // when run as `gulp test`. Or any other tasks.
+            process.exit();
+          });
+      }, 5000);
     });
 });

@@ -27,6 +27,6 @@ See the `gulpfile.js` for all Gulp tasks and their explanations.
 ## Time Estimation
 
 - Tuesday - 1.5 hours at Exponea + 2 hours at home
-- Wednesday - 6-7 hours at home
+- Wednesday - 7-8 hours at home
 
 For more information check the `git log`.
