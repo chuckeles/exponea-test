@@ -1,8 +1,17 @@
+@import colors
 @import variables
 
+.metric
+  width: 100%
+
 .metric-value
-  flex:      1
   font-size: 3em
 
-  & + .metric-graph
-    margin-left: $padding
+.metric-description
+  color: $text-light
+
+.metric-change-positive
+  color: $success
+
+.metric-change-negative
+  color: $warning

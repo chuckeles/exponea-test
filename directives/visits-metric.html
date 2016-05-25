@@ -1,9 +1,17 @@
-<div class="card metric">
+<div class="card">
   <h3 class="card-header">{{ title }} Visits</h3>
-  <div class="card-row">
-    <div class="metric-value">{{ value | number }}</div>
-    <div class="metric-graph">graph</div>
-  </div>
+  <table class="metric">
+    <tr>
+      <td class="metric-value">{{ value | number }}</td>
+      <td class="metric-graph">graph</td>
+    </tr>
+    <tr>
+      <td class="metric-description">last 7 days</td>
+      <td ng-class="{ 'metric-change-positive': change > 0, 'metric-change-negative': change <= 0 }">
+        {{ change | number:2 }}%
+      </td>
+    </tr>
+  </table>
   <div class="card-row goal" ng-show="goal">
     <h4 class="goal-title">Goal</h4>
     <div class="goal-graph">graph</div>

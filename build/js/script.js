@@ -32015,6 +32015,7 @@ angular.module("exponeaApp")
       replace: true,
       link: function visitsMetricLink(scope) {
         scope.value = Math.floor(Math.random() * (scope.goal || 5000));
+        scope.change = Math.random() * 100 - 50;
       }
     };
   });

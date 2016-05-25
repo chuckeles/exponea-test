@@ -428,13 +428,20 @@ a {
       -ms-flex: 1;
           flex: 1; }
 
+.metric {
+  width: 100%; }
+
 .metric-value {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   font-size: 3em; }
-  .metric-value + .metric-graph {
-    margin-left: 2.5rem; }
+
+.metric-description {
+  color: #adb1ba; }
+
+.metric-change-positive {
+  color: #39a847; }
+
+.metric-change-negative {
+  color: #db1b5c; }
 
 .notifications-icon {
   color: #adb1ba;
