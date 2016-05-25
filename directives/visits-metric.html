@@ -21,6 +21,6 @@
     <div class="goal-graph">
       <progress class="goal-progress" value="{{ value }}" max="{{ goal }}">{{ value }} / {{ goal }}</progress>
     </div>
-    <div class="goal-percent">{{ value / goal | number }}%</div>
+    <div class="goal-percent">{{ value / goal * 100 | number:0 }}%</div>
   </div>
 </div>
