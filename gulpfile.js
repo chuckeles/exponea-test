@@ -3,6 +3,7 @@
  */
 var browserSync = require("browser-sync").create();
 var gulp        = require("gulp");
+var karma       = require("karma");
 
 /**
  * Gulp plugins.
@@ -31,7 +32,8 @@ var input = {
     "bower_components/angular-route/angular-route.js",
     "bower_components/chartist/dist/chartist.js",
     "js/**/*.js"
-  ]
+  ],
+  karma: __dirname + "/test/karma.js"
 };
 
 /**
@@ -109,4 +111,26 @@ gulp.task("js", function js() {
     .pipe(plumber())
     .pipe(concat("script.js"))
     .pipe(gulp.dest(output.js));
+});
+
+/**
+ * This task runs the tests.
+ */
+gulp.task("test", ["karma", "protractor"]);
+
+/**
+ * Run the karma tests (unit tests).
+ */
+gulp.task("karma", function karmaTask(done) {
+  new karma.Server({
+    configFile: input.karma,
+    singleRun: true
+  }, done).start();
+});
+
+/**
+ * Run the protractor tests (feature or end-to-end tests).
+ */
+gulp.task("protractor", function protractorTask() {
+
 });
