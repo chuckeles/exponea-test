@@ -118,8 +118,11 @@ gulp.task("js", function js() {
 
 /**
  * This task runs the tests.
+ * Run karma and protractor in order in case protractor fails.
  */
-gulp.task("test", ["karma", "protractor"]);
+gulp.task("test", ["karma"], function test() {
+  gulp.start("protractor");
+});
 
 /**
  * Run the karma tests (unit tests).
@@ -128,9 +131,7 @@ gulp.task("karma", function karmaTask(done) {
   new karma.Server({
     configFile: input.karma,
     singleRun: true
-  }, function karmaDone() {
-    done();
-  }).start();
+  }, done).start();
 });
 
 /**
@@ -157,10 +158,12 @@ gulp.task("protractor", function protractorTask(done) {
       spawn("node_modules/protractor/bin/protractor", [input.protractor], {
         stdio: "inherit"
       })
-        .on("close", function protractorRun() {
-          done();
+        .on("close", function protractorRun(code) {
+          done(code);
 
           // Close browser-sync and webdriver-manager.
+          // Unfortunatelly this also exits the karma task
+          // when run as `gulp test`.
           process.exit();
         });
     });

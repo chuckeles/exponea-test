@@ -1,6 +1,6 @@
-language: node
+language: node_js
 
-node:
+node_js:
   - 5.1
 
 before_install:
