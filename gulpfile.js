@@ -23,11 +23,13 @@ var input = {
   ],
   css: [
     "bower_components/normalize-css/normalize.css",
+    "bower_components/chartist/dist/chartist.css",
     "sass/**/*.sass"
   ],
   js: [
     "bower_components/angular/angular.js",
     "bower_components/angular-route/angular-route.js",
+    "bower_components/chartist/dist/chartist.js",
     "js/**/*.js"
   ]
 };

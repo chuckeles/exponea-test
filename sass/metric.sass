@@ -10,8 +10,26 @@
 .metric-description
   color: $text-light
 
+.metric-change
+  text-align: center
+
 .metric-change-positive
   color: $success
 
 .metric-change-negative
   color: $warning
+
+.metric-graph
+  padding-bottom: 2.2rem
+
+  .ct-bar
+    stroke-width: 20px
+
+    @media (min-width: $breakpoint-medium)
+      stroke-width: 5px
+
+.metric-graph-positive .ct-bar
+  stroke: $success
+
+.metric-graph-negative .ct-bar
+  stroke: $warning

@@ -3,11 +3,13 @@
   <table class="metric">
     <tr>
       <td class="metric-value">{{ value | number }}</td>
-      <td class="metric-graph">graph</td>
+      <td class="metric-graph" ng-class="{ 'metric-graph-positive': change > 0, 'metric-graph-negative': change <= 0 }">
+        <chartist type="bar" data="graphData"></chartist>
+      </td>
     </tr>
     <tr>
       <td class="metric-description">last 7 days</td>
-      <td ng-class="{ 'metric-change-positive': change > 0, 'metric-change-negative': change <= 0 }">
+      <td class="metric-change" ng-class="{ 'metric-change-positive': change > 0, 'metric-change-negative': change <= 0 }">
         <span ng-show="change > 0">+</span>
         <span ng-show="change < 0">-</span>
         {{ abs(change) | number:2 }}%
