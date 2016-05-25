@@ -8,7 +8,9 @@
     <tr>
       <td class="metric-description">last 7 days</td>
       <td ng-class="{ 'metric-change-positive': change > 0, 'metric-change-negative': change <= 0 }">
-        {{ change | number:2 }}%
+        <span ng-show="change > 0">+</span>
+        <span ng-show="change < 0">-</span>
+        {{ abs(change) | number:2 }}%
       </td>
     </tr>
   </table>
