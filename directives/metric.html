@@ -3,6 +3,9 @@
   <div class="card-main metric-value">{{ value | spaceyNumber }}</div>
   <div class="card-row goal" ng-show="goal">
     <h4 class="goal-title">Goal</h4>
-    <div class="goal-graph">{{ value }} / {{ goal }}</div>
+    <div class="goal-graph">
+      <progress class="goal-progress" value="{{ value }}" max="{{ goal }}">{{ value }} / {{ goal }}</progress>
+    </div>
+    <div class="goal-percent">{{ value / goal | number }}%</div>
   </div>
 </div>

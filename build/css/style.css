@@ -494,13 +494,42 @@ a {
 .goal-title {
   margin: 0;
   text-transform: uppercase; }
-  .goal-title + .goal-graph {
-    margin-left: 1.4rem; }
 
 .goal-graph {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1;
+  margin: 0 1.4rem; }
+
+.goal-progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  color: #8d4ffb;
+  height: 4px;
+  width: 100%; }
+  .goal-progress::-webkit-progress-bar {
+    background-color: #edf1fa;
+    border-radius: 4px; }
+  .goal-progress::-moz-progress-bar {
+    background-color: #edf1fa;
+    border-radius: 4px; }
+  .goal-progress::-webkit-progress-value {
+    background-color: #8d4ffb;
+    border-radius: 4px; }
+  .goal-progress::-moz-progress-value {
+    background-color: #8d4ffb;
+    border-radius: 4px; }
+
+.goal-percent {
+  font-weight: bold; }
 
 .metric {
   width: 100%; }
