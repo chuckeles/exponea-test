@@ -10,7 +10,7 @@ describe("visits-metric", function() {
 
   it("shows the last 7 days change", function() {
     expect(this.element.text()).toMatch("last 7 days");
-    expect(this.element.text()).toMatch(/[+-][\s\n]+[.0-9]+%/);
+    expect(this.element.text()).toMatch(/[+-][\s\n]+[.,0-9]+%/);
   });
 
   it("contains a chart", function() {
