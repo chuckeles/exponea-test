@@ -125,7 +125,9 @@ gulp.task("karma", function karmaTask(done) {
   new karma.Server({
     configFile: input.karma,
     singleRun: true
-  }, done).start();
+  }, function karmaDone() {
+    done();
+  }).start();
 });
 
 /**

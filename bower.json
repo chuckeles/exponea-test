@@ -9,6 +9,7 @@
     "normalize-css": "normalize.css#^4.1.1",
     "angular": "^1.5.5",
     "angular-route": "^1.5.5",
-    "chartist": "^0.9.7"
+    "chartist": "^0.9.7",
+    "angular-mocks": "^1.5.5"
   }
 }
