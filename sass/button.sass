@@ -4,15 +4,22 @@
 .button-group
   display: flex
 
+  .button:not(:last-child)
+    border-bottom-right-radius: 0
+    border-top-right-radius:    0
+
   .button + .button
-    margin-left: 0
-    border-left: none
+    border-bottom-left-radius: 0
+    border-left:               none
+    border-top-left-radius:    0
+    margin-left:               0
 
   .button + .button
     border-left: 1px solid darken($primary, 5%)
 
 .button
   background-color: $button
+  border-radius:    $border-radius
   border:           1px solid $border
   color:            $text
   cursor:           pointer
@@ -20,7 +27,7 @@
   padding:          ($padding-tiny / 2) $padding-tiny
 
   .button-icon
-  margin-left: $padding-small
+    margin-left: $padding-small
 
   & + &,
   .button-group + &
