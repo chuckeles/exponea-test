@@ -152,9 +152,7 @@ gulp.task("protractor", function protractorTask(done) {
         childProcess = "xvfb-run";
       }
 
-      spawn(childProcess, args, {
-        stdio: "inherit"
-      });
+      spawn(childProcess, args);
 
       console.log("Running protractor in 5 seconds...");
       setTimeout(function delayedProtractor() {
